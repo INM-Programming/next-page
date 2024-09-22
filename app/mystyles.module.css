@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+}
+
+.option {
+    display: flex;
+    flex-grow: 1;
+    background-color: grey;
+}
