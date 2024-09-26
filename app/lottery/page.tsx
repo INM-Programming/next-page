@@ -1,3 +1,4 @@
+import Participants from "./participants"
 export default function Lottery() {
-    return (<div>Lottery</div>)
+    return (<Participants/>)
 }
