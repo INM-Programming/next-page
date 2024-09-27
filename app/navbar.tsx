@@ -6,7 +6,7 @@ export default function Navbar() {
 
   var options = [];
   options.push(new Link_Class('Home','/'));
-  options.push(new Link_Class('Clock','clock'));
+  options.push(new Link_Class('Chronometer','chronometer'));
   options.push(new Link_Class('Lottery','lottery'));
 
   return (
