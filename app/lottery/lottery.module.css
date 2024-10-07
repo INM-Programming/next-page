@@ -1,0 +1,13 @@
+.container_list_participant {
+    overflow-y: scroll;
+    height: 190px;
+}
+
+.list_participant {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.participant {
+    width: 25%
+}
