@@ -11,3 +11,17 @@
 .participant {
     width: 25%
 }
+
+.input_participant {
+    width: 25%
+}
+
+.button_add_participant {
+    width: 25% ;
+    background-color: grey;
+}
+
+.button_pick_winner {
+    width: 25% ;
+    background-color: grey;
+}

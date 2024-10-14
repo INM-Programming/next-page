@@ -26,9 +26,12 @@ export default function Participants() {
                     }
                 </div>
             </div>
-            <input onChange = {(e) => changeNewParticipant(e.target.value)} placeholder = "Write Participant"></input>
-            <button onClick = {() => addParticipant()}>
+            <input className = {lottery.input_participant} onChange = {(e) => changeNewParticipant(e.target.value)} placeholder = "Write Participant"></input>
+            <button className = {lottery.button_add_participant} onClick = {() => addParticipant()}>
                 Add Participant
+            </button>
+            <button className = {lottery.button_pick_winner}>
+                Pick a Winner
             </button>
         </div>
     )
