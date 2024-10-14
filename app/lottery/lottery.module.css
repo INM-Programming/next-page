@@ -1,27 +1,56 @@
+.page_lottery {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .container_list_participant {
-    overflow-y: scroll;
-    height: 190px;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
 }
 
 .list_participant {
-    display:flex;
+    display: flex;
+    overflow-y: auto;
     flex-direction: row;
+    flex-shrink: 0;
+    flex-grow: 0;
     flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 10px;
+    max-height: 50vh;
+    width: 100%;
 }
 .participant {
-    width: 25%
+    display:flex;
+    width: 30%;
+    background-color: grey;
+}
+
+.container_list_interaction {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 72px;
+    width: 100%;
 }
 
 .input_participant {
+    display: flex;
     width: 25%
 }
 
 .button_add_participant {
+    display: flex;
     width: 25% ;
     background-color: grey;
 }
 
 .button_pick_winner {
+    display: flex;
     width: 25% ;
     background-color: grey;
 }

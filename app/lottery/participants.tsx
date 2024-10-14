@@ -16,7 +16,7 @@ export default function Participants() {
     }
 
     return (
-        <div>
+        <div className = {lottery.page_lottery}>
             <div className = {lottery.container_list_participant}>
                 <div className = {lottery.list_participant}>
                     { participants.map(
@@ -26,13 +26,15 @@ export default function Participants() {
                     }
                 </div>
             </div>
-            <input className = {lottery.input_participant} onChange = {(e) => changeNewParticipant(e.target.value)} placeholder = "Write Participant"></input>
-            <button className = {lottery.button_add_participant} onClick = {() => addParticipant()}>
-                Add Participant
-            </button>
-            <button className = {lottery.button_pick_winner}>
-                Pick a Winner
-            </button>
+            <div className = {lottery.container_list_interaction}>
+                <input className = {lottery.input_participant} onChange = {(e) => changeNewParticipant(e.target.value)} placeholder = "Write Participant"></input>
+                <button className = {lottery.button_add_participant} onClick = {() => addParticipant()}>
+                    Add Participant
+                </button>
+                <button className = {lottery.button_pick_winner}>
+                    Pick a Winner
+                </button>
+            </div>
         </div>
     )
 }
