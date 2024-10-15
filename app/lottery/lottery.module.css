@@ -5,9 +5,10 @@
 }
 
 .container_list_participant {
+    display: flex;
     flex-grow: 1;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -24,7 +25,7 @@
     width: 100%;
 }
 .participant {
-    display:flex;
+    display: flex;
     width: 30%;
     background-color: grey;
 }

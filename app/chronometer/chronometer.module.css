@@ -1,0 +1,52 @@
+.page_chronometer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.container_time {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    font-size: 5vw;
+}
+
+.container_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: space-around;
+    height: 72px;
+    width: 100%;
+}
+
+.button_start {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: center;
+    height: 52px;
+    width: 30%;
+    background-color: lightgreen;
+    font-size: 32px;
+}
+
+.button_stop {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: center;
+    height: 52px;
+    width: 30%;
+    background-color: lightcoral;
+    font-size: 32px;
+}
