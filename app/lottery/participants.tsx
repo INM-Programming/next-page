@@ -6,6 +6,7 @@ export default function Participants() {
 
     const [participants,setParticipant] = useState<string[]>([]);
     const [new_participant,setNewParticipant] = useState('');
+    const [winner,setWinner] = useState<any>('');
 
     function addParticipant(){
         setParticipant([...participants, new_participant]);
@@ -13,6 +14,26 @@ export default function Participants() {
 
     function changeNewParticipant(inputParticipant:string){
         setNewParticipant(inputParticipant);
+    }
+
+    async function pickWinner(){
+        
+        try{
+            const response = await fetch("https://inm.pythonanywhere.com/lottery",{
+                method: "POST",
+                body: JSON.stringify({
+                    participants: participants
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            });
+            const choosedWinner = await response.json()
+            setWinner(choosedWinner.winner);
+        }
+        catch(error){
+            console.log(error)
+        }
     }
 
     return (
@@ -31,9 +52,10 @@ export default function Participants() {
                 <button className = {lottery.button_add_participant} onClick = {() => addParticipant()}>
                     Add Participant
                 </button>
-                <button className = {lottery.button_pick_winner}>
+                <button className = {lottery.button_pick_winner} onClick = {() => pickWinner()}>
                     Pick a Winner
                 </button>
+                <div>{participants[winner]}</div>
             </div>
         </div>
     )
