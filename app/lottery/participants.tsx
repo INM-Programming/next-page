@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
-import lottery from "./lottery.module.css"
+import lottery from "./lottery.module.css";
+import clsx from 'clsx'
 
 export default function Participants() {
 
@@ -28,8 +29,8 @@ export default function Participants() {
                     'content-type': 'application/json'
                 }
             });
-            const choosedWinner = await response.json()
-            setWinner(choosedWinner.winner);
+            const choosedWinner = await response.json();
+            setWinner(participants[choosedWinner.winner]);
         }
         catch(error){
             console.log(error)
@@ -55,8 +56,8 @@ export default function Participants() {
                 <button className = {lottery.button_pick_winner} onClick = {() => pickWinner()}>
                     Pick a Winner
                 </button>
-                <div>{participants[winner]}</div>
             </div>
+            <div className = {clsx({[lottery.winner]:winner!='',[lottery.hide]:winner==''})} >{winner}</div>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 .page_lottery {
     display: flex;
+    overflow-y: auto;
     flex-direction: column;
     flex-grow: 1;
 }
@@ -20,14 +21,20 @@
     flex-grow: 0;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     row-gap: 10px;
     max-height: 50vh;
     width: 100%;
+    height: 100%;
 }
 .participant {
     display: flex;
+    overflow: hidden;
     width: 30%;
+    height: 30%;
     background-color: grey;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .container_list_interaction {
@@ -41,17 +48,43 @@
 
 .input_participant {
     display: flex;
-    width: 25%
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 25%;
+    border-width: 1px;
+    border-color: grey;
 }
 
 .button_add_participant {
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: 25% ;
     background-color: grey;
 }
 
 .button_pick_winner {
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: 25% ;
     background-color: grey;
+}
+
+.winner {
+    display: flex;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: gold;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.hide {
+    visibility: hidden;
 }
