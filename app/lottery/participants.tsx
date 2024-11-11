@@ -39,13 +39,18 @@ export default function Participants() {
 
     return (
         <div className = {lottery.page_lottery}>
-            <div className = {lottery.container_list_participant}>
-                <div className = {lottery.list_participant}>
-                    { participants.map(
-                        (participant, index)=>
-                        <div className = {lottery.participant} key = {participant+index}>{participant}</div>
-                        )
-                    }
+            <div className ={lottery.container_participants_winner}>
+                <div className = {lottery.container_list_participant}>
+                    <div className = {lottery.list_participant}>
+                        { participants.map(
+                            (participant, index)=>
+                            <div className = {lottery.participant} key = {participant+index}>{participant}</div>
+                            )
+                        }
+                    </div>
+                </div>
+                <div className = {clsx({[lottery.container_winner]:winner!='',[lottery.hide]:winner==''})}>
+                    <div className = {lottery.winner} >{winner}</div>
                 </div>
             </div>
             <div className = {lottery.container_list_interaction}>
@@ -57,7 +62,6 @@ export default function Participants() {
                     Pick a Winner
                 </button>
             </div>
-            <div className = {clsx({[lottery.winner]:winner!='',[lottery.hide]:winner==''})} >{winner}</div>
         </div>
     )
 }

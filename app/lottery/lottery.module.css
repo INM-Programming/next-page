@@ -5,13 +5,20 @@
     flex-grow: 1;
 }
 
+.container_participants_winner {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
+}
+
 .container_list_participant {
     display: flex;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
+
 
 .list_participant {
     display: flex;
@@ -35,6 +42,30 @@
     background-color: grey;
     word-break: break-all;
     word-wrap: break-word;
+}
+
+.container_winner {
+    display: flex;
+    overflow: hidden;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.winner {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    height: 30%;
+    background-color: gold;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 .container_list_interaction {
@@ -73,18 +104,4 @@
     align-items: center;
     width: 25% ;
     background-color: grey;
-}
-
-.winner {
-    display: flex;
-    overflow: hidden;
-    flex-grow: 1;
-    flex-shrink: 0;
-    background-color: gold;
-    word-break: break-all;
-    word-wrap: break-word;
-}
-
-.hide {
-    visibility: hidden;
 }
