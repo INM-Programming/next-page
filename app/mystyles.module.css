@@ -11,3 +11,9 @@
     flex-grow: 1;
     background-color: grey;
 }
+
+.active_option {
+    display: flex;
+    flex-grow: 1;
+    background-color: blueviolet;
+}
