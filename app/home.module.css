@@ -17,3 +17,17 @@
     flex-grow: 1;
     background-color: blueviolet;
 }
+
+.list_links {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+.container_logo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    width:30%
+}

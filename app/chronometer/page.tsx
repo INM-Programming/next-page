@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import Time_Class from "@/class/time_class";
+import Time_Class from "@/app/public/classes/time_class";
 import chronometer from "./chronometer.module.css"
 
 export default function Chronometer() {

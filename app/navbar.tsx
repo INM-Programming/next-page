@@ -1,17 +1,17 @@
 'use client';
 
-import my_styles from './mystyles.module.css';
+import my_styles from './home.module.css';
 import Link from 'next/link';
-import Link_Class from '@/class/link_class';
+import Link_Class from '@/app/public/classes/link_class';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx'
 
 export default function Navbar() {
 
   var options = [];
-  options.push(new Link_Class('Home','/'));
-  options.push(new Link_Class('Chronometer','/chronometer'));
-  options.push(new Link_Class('Lottery','/lottery'));
+  options.push(new Link_Class('Home','/',''));
+  options.push(new Link_Class('Chronometer','/chronometer',''));
+  options.push(new Link_Class('Lottery','/lottery',''));
 
   const direction = usePathname();
 
