@@ -1,0 +1,59 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-top: 20px;
+    overflow-y: auto;
+    row-gap: 15px;
+}
+
+.emissor_data{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+}
+
+.emissor_name {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    height: auto;
+    width: 50%;
+}
+
+.bot_message {
+    align-items: center;
+    background-color: lightblue;
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    margin-left: 40px;
+    min-height: 30px;
+}
+
+.you {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    height: auto;
+    margin-left: 50%;
+    width: 50%;
+}
+
+.you_message {
+    align-items: center;
+    background-color: lightgrey;
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    margin-left: 40px;
+    min-height: 30px;
+}
