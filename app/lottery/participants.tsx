@@ -2,6 +2,9 @@
 import { useState } from "react";
 import lottery from "./lottery.module.css";
 import clsx from 'clsx'
+import { deleteElementArray } from "../public/functions/functions";
+import Image from "next/image";
+import delete_sign from "../public/images/delete_sign.png";
 
 export default function Participants() {
 
@@ -15,6 +18,18 @@ export default function Participants() {
 
     function changeNewParticipant(inputParticipant:string){
         setNewParticipant(inputParticipant);
+    }
+
+    function deleteParticipant(index:number){
+        const participants_after = deleteElementArray(participants,index);
+        setParticipant([...participants_after]);
+    }
+
+    const image_style : React.CSSProperties= {
+        display: "flex",
+        flexGrow: 1,
+        flexShrink: 0,
+        objectFit: "contain"
     }
 
     async function pickWinner(){
@@ -44,7 +59,12 @@ export default function Participants() {
                     <div className = {lottery.list_participant}>
                         { participants.map(
                             (participant, index)=>
-                            <div className = {lottery.participant} key = {participant+index}>{participant}</div>
+                                <div className = {lottery.participant} key = {participant+index}>
+                                    <div className = {lottery.name_participant}> {participant} </div>
+                                    <button className = {lottery.delete_participant} onClick={() => deleteParticipant(index)}>
+                                    <Image src = {delete_sign} style = {image_style} alt = "Delete Sign"/>
+                                    </button>
+                                </div> 
                             )
                         }
                     </div>

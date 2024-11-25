@@ -36,10 +36,30 @@
 }
 .participant {
     display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
     overflow: hidden;
     width: 30%;
     height: 30%;
     background-color: grey;
+}
+
+.name_participant {
+    display: flex;
+    overflow: hidden;
+    width: 70%;
+    height: 30%;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.delete_participant {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 30%;
     word-break: break-all;
     word-wrap: break-word;
 }
