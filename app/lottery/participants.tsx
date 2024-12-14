@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { deleteElementArray } from "../public/functions/functions";
 import Image from "next/image";
 import delete_sign from "../public/images/delete_sign.png";
+import Flask_Services from "../public/services/flask_services";
 
 export default function Participants() {
 
@@ -35,17 +36,8 @@ export default function Participants() {
     async function pickWinner(){
         
         try{
-            const response = await fetch("https://inm.pythonanywhere.com/lottery",{
-                method: "POST",
-                body: JSON.stringify({
-                    participants: participants
-                }),
-                headers: {
-                    'content-type': 'application/json'
-                }
-            });
-            const choosedWinner = await response.json();
-            setWinner(participants[choosedWinner.winner]);
+            const choosedWinnerIndex= await Flask_Services.lotteryService(participants);
+            setWinner(participants[choosedWinnerIndex]);
         }
         catch(error){
             console.log(error)

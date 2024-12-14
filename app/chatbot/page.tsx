@@ -2,9 +2,10 @@
 import Image from "next/image";
 import chatbot_icon from "../public/images/chatbot_icon.png"
 import person_icon from "../public/images/person_icon.png"
-import chatbot_styles from "./chatgpt.module.css"
+import chatbot_styles from "./chatbot.module.css"
 import Message_Class from "../public/classes/message_class";
 import { useState } from "react";
+import Flask_Services from "../public/services/flask_services";
 
 export default function Page(){
 
@@ -20,9 +21,17 @@ export default function Page(){
         width:"20%"
     }
 
-    function sendMessage(message:Message_Class){
-        if(message)
-            setMessage([...chat,message]);
+    async function sendMessage(message:Message_Class){
+        try{
+            if(message){
+                setMessage([...chat,message]);
+                const answer = await Flask_Services.geminiService(message.content);
+                setMessage([...chat,message,new Message_Class(answer,"ChatBot")]);
+            }
+        }
+        catch(error){
+            console.log(error);
+        }
     }
 
     function inputMessage(content:string){
@@ -45,7 +54,7 @@ export default function Page(){
                         else 
                             return  <div className = {chatbot_styles.you} key = {index}>
                                         <div className = {chatbot_styles.emissor_data}>
-                                            <Image src = {person_icon} style={emissor_icon_style} alt="Chatbot Icon"/>
+                                            <Image src = {person_icon} style={emissor_icon_style} alt="You Icon"/>
                                             <p className = {chatbot_styles.emissor_name}>You</p>
                                         </div>
                                         <p className = {chatbot_styles.you_message}> 

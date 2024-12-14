@@ -12,7 +12,7 @@ export default function Navbar() {
   options.push(new Link_Class('Home','/',''));
   options.push(new Link_Class('Chronometer','/chronometer',''));
   options.push(new Link_Class('Lottery','/lottery',''));
-  options.push(new Link_Class('ChatGPT','/chatgpt',''));
+  options.push(new Link_Class('Chatbot','/chatbot',''));
 
   const direction = usePathname();
 
