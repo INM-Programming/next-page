@@ -39,31 +39,35 @@ export default function Page(){
     }
 
     return <div className = {chatbot_styles.page}>
-                {chat.map(
-                    (message,index)=>{
-                        if(message.name_emissor == "ChatBot") 
-                            return <div className = {chatbot_styles.bot} key = {index}>
-                                        <div className = {chatbot_styles.emissor_data}>
-                                            <Image src = {chatbot_icon} style={emissor_icon_style} alt="Chatbot Icon"/>
-                                            <p className = {chatbot_styles.emissor_name}>ChatBot</p>
+                <div className = {chatbot_styles.chat}>
+                    {chat.map(
+                        (message,index)=>{
+                            if(message.name_emissor == "ChatBot") 
+                                return <div className = {chatbot_styles.bot} key = {index}>
+                                            <div className = {chatbot_styles.emissor_data}>
+                                                <Image src = {chatbot_icon} style={emissor_icon_style} alt="Chatbot Icon"/>
+                                                <p className = {chatbot_styles.emissor_name}>ChatBot</p>
+                                            </div>
+                                            <p className = {chatbot_styles.bot_message}> 
+                                            {message.content}
+                                            </p>
+                                        </div>; 
+                            else 
+                                return  <div className = {chatbot_styles.you} key = {index}>
+                                            <div className = {chatbot_styles.emissor_data}>
+                                                <Image src = {person_icon} style={emissor_icon_style} alt="You Icon"/>
+                                                <p className = {chatbot_styles.emissor_name}>You</p>
+                                            </div>
+                                            <p className = {chatbot_styles.you_message}> 
+                                            {message.content}
+                                            </p>
                                         </div>
-                                        <p className = {chatbot_styles.bot_message}> 
-                                        {message.content}
-                                        </p>
-                                    </div>; 
-                        else 
-                            return  <div className = {chatbot_styles.you} key = {index}>
-                                        <div className = {chatbot_styles.emissor_data}>
-                                            <Image src = {person_icon} style={emissor_icon_style} alt="You Icon"/>
-                                            <p className = {chatbot_styles.emissor_name}>You</p>
-                                        </div>
-                                        <p className = {chatbot_styles.you_message}> 
-                                        {message.content}
-                                        </p>
-                                    </div>
-                    }
-                )}
-                <input onChange = {(e)=>inputMessage(e.target.value)} placeholder = "Message"></input>
-                <button onClick = {()=>sendMessage(new_message!)}>Send Message</button>
+                        }
+                    )}
+                </div>
+                <div className = {chatbot_styles.input_button_message}>
+                    <input className = {chatbot_styles.input_message} onChange = {(e)=>inputMessage(e.target.value)} placeholder = "Message"></input>
+                    <button className = {chatbot_styles.button_message} onClick = {()=>sendMessage(new_message!)}>Send Message</button>
+                </div>
             </div>
 }

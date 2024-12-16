@@ -3,7 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
     flex-shrink: 0;
-    margin-top: 20px;
+    padding-top: 20px;
     overflow-y: auto;
     row-gap: 15px;
 }
@@ -56,4 +56,32 @@
     height: auto;
     margin-left: 40px;
     min-height: 30px;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.input_button_message{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    height: 85px;
+}
+
+.input_message{
+    display: flex;
+    flex-grow: 1;
+    width: 70%;
+}
+
+.button_message{
+    display: flex;
+    flex-grow: 1;
+    width: 30%;
 }
