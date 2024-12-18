@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { deleteElementArray } from "../public/functions/functions";
 import Image from "next/image";
 import delete_sign from "../public/images/delete_sign.png";
+import add_participant_icon from "../public/images/add_participant_icon.png";
 import Flask_Services from "../public/services/flask_services";
 
 export default function Participants() {
@@ -30,8 +31,21 @@ export default function Participants() {
         display: "flex",
         flexGrow: 1,
         flexShrink: 0,
-        objectFit: "contain"
+        objectFit: "contain",
+        maxWidth: "100%",
+        maxHeight: "72px",
     }
+
+    const add_participant_icon_style : React.CSSProperties= {
+        alignItems: "center",
+        display: "flex",
+        flexGrow: 1,
+        flexShrink: 0,
+        objectFit: "contain",
+        maxWidth: "100%",
+        maxHeight: "62px",
+    }
+
 
     async function pickWinner(){
         
@@ -68,7 +82,7 @@ export default function Participants() {
             <div className = {lottery.container_list_interaction}>
                 <input className = {lottery.input_participant} onChange = {(e) => changeNewParticipant(e.target.value)} placeholder = "Write Participant"></input>
                 <button className = {lottery.button_add_participant} onClick = {() => addParticipant()}>
-                    Add Participant
+                    <Image src = {add_participant_icon} style = {add_participant_icon_style} alt = "Add Participant Icon"/>
                 </button>
                 <button className = {lottery.button_pick_winner} onClick = {() => pickWinner()}>
                     Pick a Winner

@@ -14,13 +14,22 @@ export default function Page(){
     const [chat,setMessage] = useState <Array<Message_Class>>([first_message]);
     const [new_message,setNewMessage] = useState <Message_Class>();
     
-    const emissor_icon_style : React.CSSProperties= {
+    const icon_style : React.CSSProperties= {
         display: "flex",
         flexGrow: 0,
         flexShrink: 0,
-        height: "40px",
+        height: "50px",
         objectFit: "contain",
-        width:"10%",
+        width: "10%",
+    }
+
+    const send_icon_style : React.CSSProperties= {
+        display: "flex",
+        flexGrow: 0,
+        flexShrink: 0,
+        height: "50px",
+        objectFit: "contain",
+        width: "20%",
     }
 
     async function sendMessage(message:Message_Class){
@@ -47,7 +56,7 @@ export default function Page(){
                             if(message.name_emissor == "ChatBot") 
                                 return <div className = {chatbot_styles.bot} key = {index}>
                                             <div className = {chatbot_styles.emissor_data}>
-                                                <Image src = {chatbot_icon} style={emissor_icon_style} alt="Chatbot Icon"/>
+                                                <Image src = {chatbot_icon} style={icon_style} alt="Chatbot Icon"/>
                                                 <p className = {chatbot_styles.emissor_name}>ChatBot</p>
                                             </div>
                                             <p className = {chatbot_styles.bot_message}> 
@@ -57,7 +66,7 @@ export default function Page(){
                             else 
                                 return  <div className = {chatbot_styles.you} key = {index}>
                                             <div className = {chatbot_styles.emissor_data}>
-                                                <Image src = {person_icon} style={emissor_icon_style} alt="You Icon"/>
+                                                <Image src = {person_icon} style={icon_style} alt="You Icon"/>
                                                 <p className = {chatbot_styles.emissor_name}>You</p>
                                             </div>
                                             <p className = {chatbot_styles.you_message}> 
@@ -70,7 +79,7 @@ export default function Page(){
                 <div className = {chatbot_styles.input_button_message}>
                     <input className = {chatbot_styles.input_message} onChange = {(e)=>inputMessage(e.target.value)} placeholder = "Message"></input>
                     <button className = {chatbot_styles.button_message} onClick = {()=>sendMessage(new_message!)}>
-                        <Image src = {send_message_icon} style = {emissor_icon_style} alt = "send_message_icon"></Image>
+                        <Image src = {send_message_icon} style = {send_icon_style} alt = "send_message_icon"></Image>
                     </button>
                 </div>
             </div>

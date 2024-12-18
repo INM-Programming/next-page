@@ -89,11 +89,14 @@
 }
 
 .container_list_interaction {
+    column-gap: 6px;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     flex-grow: 0;
     height: 72px;
+    padding-left: 40px;
+    padding-right: 40px;
     width: 100%;
 }
 
@@ -107,13 +110,14 @@
 }
 
 .button_add_participant {
+    border-radius: 30px;
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    width: 25% ;
-    background-color: grey;
+    width: 80px ;
+    background-color: lightgreen;
 }
 
 .button_pick_winner {
