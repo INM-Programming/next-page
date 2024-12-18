@@ -2,6 +2,7 @@
 import Image from "next/image";
 import chatbot_icon from "../public/images/chatbot_icon.png"
 import person_icon from "../public/images/person_icon.png"
+import send_message_icon from "../public/images/send_message_icon.png"
 import chatbot_styles from "./chatbot.module.css"
 import Message_Class from "../public/classes/message_class";
 import { useState } from "react";
@@ -12,13 +13,14 @@ export default function Page(){
     const first_message = new Message_Class("How can I help you?","ChatBot");
     const [chat,setMessage] = useState <Array<Message_Class>>([first_message]);
     const [new_message,setNewMessage] = useState <Message_Class>();
+    
     const emissor_icon_style : React.CSSProperties= {
         display: "flex",
         flexGrow: 0,
         flexShrink: 0,
         height: "40px",
         objectFit: "contain",
-        width:"20%"
+        width:"10%",
     }
 
     async function sendMessage(message:Message_Class){
@@ -67,7 +69,9 @@ export default function Page(){
                 </div>
                 <div className = {chatbot_styles.input_button_message}>
                     <input className = {chatbot_styles.input_message} onChange = {(e)=>inputMessage(e.target.value)} placeholder = "Message"></input>
-                    <button className = {chatbot_styles.button_message} onClick = {()=>sendMessage(new_message!)}>Send Message</button>
+                    <button className = {chatbot_styles.button_message} onClick = {()=>sendMessage(new_message!)}>
+                        <Image src = {send_message_icon} style = {emissor_icon_style} alt = "send_message_icon"></Image>
+                    </button>
                 </div>
             </div>
 }
