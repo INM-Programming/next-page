@@ -6,6 +6,7 @@ import { deleteElementArray } from "../public/functions/functions";
 import Image from "next/image";
 import delete_sign from "../public/images/delete_sign.png";
 import add_participant_icon from "../public/images/add_participant_icon.png";
+import crown from "../public/images/crown.png";
 import Flask_Services from "../public/services/flask_services";
 
 export default function Participants() {
@@ -46,6 +47,15 @@ export default function Participants() {
         maxHeight: "62px",
     }
 
+    const crown_style : React.CSSProperties= {
+        display: "flex",
+        flexGrow: 0,
+        flexShrink: 0,
+        objectFit: "contain",
+        maxWidth: "100%",
+        maxHeight: "72px",
+    }
+
 
     async function pickWinner(){
         
@@ -76,6 +86,7 @@ export default function Participants() {
                     </div>
                 </div>
                 <div className = {clsx({[lottery.container_winner]:winner!='',[lottery.hide]:winner==''})}>
+                    <Image src = {crown} style = {crown_style} alt = "Crown"/>
                     <div className = {lottery.winner} >{winner}</div>
                 </div>
             </div>
