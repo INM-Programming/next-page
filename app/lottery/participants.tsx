@@ -75,10 +75,10 @@ export default function Participants() {
                     <div className = {lottery.list_participant}>
                         { participants.map(
                             (participant, index)=>
-                                <div className = {lottery.participant} key = {participant+index}>
+                                <div className = {clsx({[lottery.participant_2]:winner!='',[lottery.participant]:winner==''})} key = {participant+index}>
                                     <div className = {lottery.name_participant}> {participant} </div>
                                     <button className = {lottery.delete_participant} onClick={() => deleteParticipant(index)}>
-                                    <Image src = {delete_sign} style = {image_style} alt = "Delete Sign"/>
+                                        <Image src = {delete_sign} style = {image_style} alt = "Delete Sign"/>
                                     </button>
                                 </div> 
                             )

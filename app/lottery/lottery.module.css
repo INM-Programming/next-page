@@ -1,6 +1,5 @@
 .page_lottery {
     display: flex;
-    overflow-y: auto;
     flex-direction: column;
     flex-grow: 1;
 }
@@ -15,88 +14,107 @@
 .container_list_participant {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
 }
 
 
 .list_participant {
+    align-items: center;
     display: flex;
-    overflow-y: auto;
     flex-direction: row;
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    row-gap: 10px;
-    max-height: 50vh;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-top: 30px;   
+    row-gap: 30px;
     width: 100%;
-    height: 100%;
 }
+
 .participant {
     align-items: center;
+    background-color: grey;
     display: flex;
     flex-direction: row;
+    flex-grow: 0;
     flex-shrink: 0;
+    height: 30%;
+    overflow: hidden;
+    width: 22%;
+}
+
+.participant_2 {
+    align-items: center;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 30%;
     overflow: hidden;
     width: 30%;
-    height: 30%;
-    background-color: grey;
 }
 
 .name_participant {
-    align-items: center;
     display: flex;
     height: 100%;
     overflow: hidden;
     padding-left: 10px;
     width: 70%;
-}
-
-.delete_participant {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    flex-shrink: 0;
-    justify-content: center;
-    width: 30%;
-    word-break: break-all;
+    word-break: break-word;
     word-wrap: break-word;
 }
 
-.container_winner {
-    display: flex;
+.delete_participant {
+    display: flex; 
     flex-direction: column;
-    overflow: hidden;
     flex-shrink: 0;
     justify-content: center;
+    overflow: hidden;
+    width: 30%;
+}
+
+.container_winner {
     align-items: center;
-    width: 200px;
-    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    max-height: calc(100vh - 150px);
+    max-width: 25%;
+    overflow: hidden;
 }
 
 .winner {
+    align-items: center;
+    background-color: gold;
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    flex-shrink: 0;
+    flex-wrap: wrap;
     justify-content: center;
     height: auto;
-    background-color: gold;
-    word-break: break-all;
+    max-height: 50%;
+    max-width: 80%;
+    overflow: hidden;
+    padding: 40px;
+    width: auto;
+    word-break: break-word;
     word-wrap: break-word;
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
 }
 
 .container_list_interaction {
     column-gap: 10px;
     display: flex;
     flex-direction: row;
-    flex-shrink: 0;
     flex-grow: 0;
+    flex-shrink: 0;
     height: 72px;
     justify-content: center;
     padding-left: 40px;
